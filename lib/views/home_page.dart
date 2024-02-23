@@ -109,9 +109,11 @@ class _HomePageState extends State<HomePage> {
                               const Gap(10),
                               RotatedBox(
                                 quarterTurns: 3,
-                                child: SpecialText("bluebank.com",
-                                    size: 10,
-                                    color: appColor.appColor.backTextColor),
+                                child: SpecialText(
+                                  "bluebank.com",
+                                  size: 10,
+                                  color: appColor.appColor.backTextColor,
+                                ),
                               ),
                             ],
                           ),
@@ -123,27 +125,31 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 14, vertical: 5),
+                            horizontal: 14,
+                            vertical: 5,
+                          ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               const Gap(40),
                               SpecialFaText(
-                                  cardHolderNameController.text
-                                      .replaceAll(" ", "\n"),
-                                  size: 18,
-                                  fontWeight: FontWeight.w500,
-                                  color: appColor.appColor.backTextColor),
+                                cardHolderNameController.text
+                                    .replaceAll(" ", "\n"),
+                                size: 18,
+                                fontWeight: FontWeight.w500,
+                                color: appColor.appColor.backTextColor,
+                              ),
 
                               const Gap(10),
 
                               SpecialText(
-                                  cardNumberController.text
-                                      .replaceAll(" ", "\n")
-                                      .toString(),
-                                  size: 18,
-                                  color: appColor.appColor.backTextColor),
+                                cardNumberController.text
+                                    .replaceAll(" ", "\n")
+                                    .toString(),
+                                size: 18,
+                                color: appColor.appColor.backTextColor,
+                              ),
 
                               const Gap(30),
                               Row(
@@ -152,14 +158,16 @@ class _HomePageState extends State<HomePage> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      SpecialText('EXP',
-                                          size: 12,
-                                          color:
-                                              appColor.appColor.backTextColor),
-                                      SpecialText(cardExpiryDateController.text,
-                                          size: 14,
-                                          color:
-                                              appColor.appColor.backTextColor),
+                                      SpecialText(
+                                        'EXP',
+                                        size: 12,
+                                        color: appColor.appColor.backTextColor,
+                                      ),
+                                      SpecialText(
+                                        cardExpiryDateController.text,
+                                        size: 14,
+                                        color: appColor.appColor.backTextColor,
+                                      ),
                                     ],
                                   ),
                                   const Gap(20),
@@ -167,14 +175,16 @@ class _HomePageState extends State<HomePage> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      SpecialText('CVV2',
-                                          size: 12,
-                                          color:
-                                              appColor.appColor.backTextColor),
-                                      SpecialText(cardCvvController.text,
-                                          size: 14,
-                                          color:
-                                              appColor.appColor.backTextColor),
+                                      SpecialText(
+                                        'CVV2',
+                                        size: 12,
+                                        color: appColor.appColor.backTextColor,
+                                      ),
+                                      SpecialText(
+                                        cardCvvController.text,
+                                        size: 14,
+                                        color: appColor.appColor.backTextColor,
+                                      ),
                                     ],
                                   ),
                                 ],
@@ -239,22 +249,23 @@ class _HomePageState extends State<HomePage> {
                             width: 20,
                             height: 20,
                             decoration: BoxDecoration(
-                                boxShadow: [
-                                  if (appColor.selectedIndex == index)
-                                    const BoxShadow(
-                                      color: Colors.black,
-                                      blurRadius: 5,
-                                    ),
-                                ],
-                                border: appColor.selectedIndex == index
-                                    ? Border.all(
-                                        color: Colors.white,
-                                        width: 2,
-                                      )
-                                    : null,
-                                borderRadius: BorderRadius.circular(99),
-                                color: appColor
-                                    .colorList[index].fronBackgroundColor),
+                              boxShadow: [
+                                if (appColor.selectedIndex == index)
+                                  const BoxShadow(
+                                    color: Colors.black,
+                                    blurRadius: 5,
+                                  ),
+                              ],
+                              border: appColor.selectedIndex == index
+                                  ? Border.all(
+                                      color: Colors.white,
+                                      width: 2,
+                                    )
+                                  : null,
+                              borderRadius: BorderRadius.circular(99),
+                              color:
+                                  appColor.colorList[index].fronBackgroundColor,
+                            ),
                           ),
                         ),
                       ),
@@ -296,14 +307,19 @@ class _HomePageState extends State<HomePage> {
                         CardInputFormatter(),
                       ],
                       onChanged: (value) {
-                        var text = value.replaceAll(RegExp(r'\s+\b|\b\s'), ' ');
+                        var text = value.replaceAll(
+                          RegExp(r'\s+\b|\b\s'),
+                          ' ',
+                        );
                         setState(() {
                           cardNumberController.value =
                               cardNumberController.value.copyWith(
-                                  text: text,
-                                  selection: TextSelection.collapsed(
-                                      offset: text.length),
-                                  composing: TextRange.empty);
+                            text: text,
+                            selection: TextSelection.collapsed(
+                              offset: text.length,
+                            ),
+                            composing: TextRange.empty,
+                          );
                         });
                       },
                     ),
@@ -344,10 +360,12 @@ class _HomePageState extends State<HomePage> {
                         setState(() {
                           cardHolderNameController.value =
                               cardHolderNameController.value.copyWith(
-                                  text: value,
-                                  selection: TextSelection.collapsed(
-                                      offset: value.length),
-                                  composing: TextRange.empty);
+                            text: value,
+                            selection: TextSelection.collapsed(
+                              offset: value.length,
+                            ),
+                            composing: TextRange.empty,
+                          );
                         });
                       },
                     ),
@@ -374,7 +392,9 @@ class _HomePageState extends State<HomePage> {
                           decoration: const InputDecoration(
                             border: InputBorder.none,
                             contentPadding: EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 15),
+                              horizontal: 20,
+                              vertical: 15,
+                            ),
                             hintText: 'MM/YY',
                             hintStyle: TextStyle(
                               color: Colors.grey,
@@ -391,15 +411,19 @@ class _HomePageState extends State<HomePage> {
                             CardDateInputFormatter(),
                           ],
                           onChanged: (value) {
-                            var text =
-                                value.replaceAll(RegExp(r'\s+\b|\b\s'), ' ');
+                            var text = value.replaceAll(
+                              RegExp(r'\s+\b|\b\s'),
+                              ' ',
+                            );
                             setState(() {
                               cardExpiryDateController.value =
                                   cardExpiryDateController.value.copyWith(
-                                      text: text,
-                                      selection: TextSelection.collapsed(
-                                          offset: text.length),
-                                      composing: TextRange.empty);
+                                text: text,
+                                selection: TextSelection.collapsed(
+                                  offset: text.length,
+                                ),
+                                composing: TextRange.empty,
+                              );
                             });
                           },
                         ),
@@ -423,7 +447,9 @@ class _HomePageState extends State<HomePage> {
                           decoration: const InputDecoration(
                             border: InputBorder.none,
                             contentPadding: EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 15),
+                              horizontal: 20,
+                              vertical: 15,
+                            ),
                             hintText: 'CVV',
                             hintStyle: TextStyle(
                               color: Colors.grey,
@@ -445,7 +471,10 @@ class _HomePageState extends State<HomePage> {
                                 cardNumberController.text = '$value ';
                                 cardNumberController.selection =
                                     TextSelection.fromPosition(
-                                        TextPosition(offset: value.length + 1));
+                                  TextPosition(
+                                    offset: value.length + 1,
+                                  ),
+                                );
                               }
                             });
                           },
