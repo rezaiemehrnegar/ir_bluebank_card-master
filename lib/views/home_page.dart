@@ -496,8 +496,9 @@ class _HomePageState extends State<HomePage> {
                     onPressed: () {
                       Future.delayed(const Duration(milliseconds: 300), () {
                         showDialog(
-                            context: context,
-                            builder: (context) => const CardAlertDialog());
+                          context: context,
+                          builder: (context) => const CardAlertDialog(),
+                        );
                         cardCvvController.clear();
                         cardExpiryDateController.clear();
                         cardHolderNameController.clear();
